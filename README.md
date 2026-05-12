@@ -11,7 +11,7 @@
 | 技术栈规范类 | FastAPI + Vue 全栈开发规范 | `fastapi-vue-standard` |
 | 网页与产品设计类 | 高质量网页、落地页、仪表盘、前端体验设计 | `web-design-engineer` |
 | 知识库检索类 | 本地资料、Markdown、PDF、Excel 检索问答 | `kb-retriever` |
-| 视觉创作类 | 图像生成、网页视频、HyperFrames 制作、动画适配、registry 组件 | `gpt-image-2`, `hyperframes`, `hyperframes-cli`, `hyperframes-media`, `website-to-hyperframes`, `web-video-presentation`, `remotion-to-hyperframes`, `animejs`, `css-animations`, `gsap`, `lottie`, `tailwind`, `three`, `waapi`, `hyperframes-registry`, `contribute-catalog` |
+| 视觉创作类 | 图像生成、网页视频、HyperFrames 制作、动画适配、registry 组件 | `gpt-image-2`, `hyperframes`, `hyperframes-cli`, `hyperframes-media`, `hyperframes-workflow`, `website-to-hyperframes`, `web-video-presentation`, `remotion-to-hyperframes`, `animejs`, `css-animations`, `gsap`, `lottie`, `tailwind`, `three`, `waapi`, `hyperframes-registry`, `contribute-catalog` |
 | 任务总结类 | 将当前任务整理为桌面中文 Markdown 概要 | `summarize-task` |
 
 ## Skills 明细
@@ -86,6 +86,11 @@
   - 用途：为 HyperFrames 项目生成或处理媒体资产。
   - 覆盖：Kokoro TTS、Whisper 转写、u2net 背景移除。
   - 注意：首次运行相关命令可能下载模型。
+
+- `hyperframes-workflow`
+  - 用途：沉淀 HyperFrames 视频项目的固定创作、预览、检查、渲染和 Docker 排障流程。
+  - 覆盖：新项目初始化、Codex 生成视频提示、preview/lint/inspect/render 顺序、Windows 下 Docker 渲染镜像手动构建。
+  - 注意：不替代 `hyperframes` 和 `hyperframes-cli`；写 composition 和运行 CLI 时仍配合对应 skill 使用。
 
 - `website-to-hyperframes`
   - 用途：把现有网站捕获并改造成 HyperFrames 视频。

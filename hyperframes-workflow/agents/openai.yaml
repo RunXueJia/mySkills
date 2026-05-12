@@ -1,0 +1,4 @@
+interface:
+  display_name: "HyperFrames Workflow"
+  short_description: "HyperFrames build and render flow"
+  default_prompt: "Use $hyperframes-workflow to create, preview, validate, render, or troubleshoot a HyperFrames video project."
