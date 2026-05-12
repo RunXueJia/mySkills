@@ -11,7 +11,7 @@ When the user sends `/总结任务`, create a Chinese Markdown summary for the c
 
 Write the summary to:
 
-`C:\Users\16084\Desktop\task`
+`%USERPROFILE%\Desktop\task`
 
 Create the directory if it does not exist.
 

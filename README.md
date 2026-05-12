@@ -37,8 +37,8 @@
 
 - `personal-skill-installer`
   - 用途：覆盖个人 Codex skills 的默认安装位置。
-  - 覆盖：安装、列出、更新用户级 skills 时，默认目标目录为 `C:\Users\16084\.agents\skills`。
-  - 注意：每次安装或更新个人 skill 后，同步维护 `C:\Users\16084\.agents\skills\INDEX.md`。
+  - 覆盖：安装、列出、更新用户级 skills 时，默认目标目录为 `%USERPROFILE%\.agents\skills`。
+  - 注意：每次安装或更新个人 skill 后，同步维护 `%USERPROFILE%\.agents\skills\README.md`。
 
 ### 技术栈规范类
 
@@ -148,7 +148,7 @@
 
 - `summarize-task`
   - 用途：当用户发送 `/总结任务` 或要求总结当前任务时，生成中文 Markdown 任务概要。
-  - 输出：默认写入 `C:\Users\16084\Desktop\task`，文件名使用当前日期和中文标题。
+  - 输出：默认写入 `%USERPROFILE%\Desktop\task`，文件名使用当前日期和中文标题。
   - 注意：概要应记录目标、已创建内容、查看方式、取消/卸载方式、验证结果和注意事项。
 
 ## 维护规则
