@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personal Skill Installer"
+  short_description: "Install personal skills under .agents"
+  default_prompt: "Use $personal-skill-installer when installing my personal Codex skills."

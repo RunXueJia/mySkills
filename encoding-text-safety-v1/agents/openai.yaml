@@ -1,0 +1,4 @@
+interface:
+  display_name: "编码与文本安全规则（v1）"
+  short_description: "统一 UTF-8 无 BOM、乱码检查与修复"
+  default_prompt: "Use $encoding-text-safety-v1 to enforce UTF-8 without BOM, detect mojibake before editing, verify the file after writing, and report whether any BOM or text corruption was fixed."

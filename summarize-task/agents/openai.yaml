@@ -1,0 +1,4 @@
+interface:
+  display_name: "总结任务"
+  short_description: "按 /总结任务 生成桌面中文任务概要"
+  default_prompt: "Use $summarize-task to create a dated Chinese task summary on the desktop."
