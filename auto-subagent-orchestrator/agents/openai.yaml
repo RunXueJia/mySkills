@@ -1,6 +1,6 @@
 interface:
   display_name: "Auto Subagent Orchestrator"
-  short_description: "Decides when to split work and coordinate sub-agents."
+  short_description: "Coordinate parallel sub-agent work"
   brand_color: "#6366F1"
   default_prompt: "Use $auto-subagent-orchestrator to split suitable tasks into coordinated sub-agent work."
 

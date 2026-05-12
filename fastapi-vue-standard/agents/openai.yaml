@@ -1,0 +1,4 @@
+interface:
+  display_name: "FastAPI Vue Standard"
+  short_description: "FastAPI and Vue project standards"
+  default_prompt: "Use $fastapi-vue-standard to design or implement a FastAPI + Vue feature with consistent architecture and permissions."

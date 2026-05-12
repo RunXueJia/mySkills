@@ -1,0 +1,4 @@
+interface:
+  display_name: "Find Skills"
+  short_description: "Discover installable Codex skills"
+  default_prompt: "Use $find-skills to find an installable Codex skill for a specific capability."

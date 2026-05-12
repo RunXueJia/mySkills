@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anime.js HyperFrames"
+  short_description: "Deterministic Anime.js for HyperFrames"
+  default_prompt: "Use $animejs to make Anime.js timelines deterministic inside a HyperFrames composition."

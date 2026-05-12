@@ -1,0 +1,4 @@
+interface:
+  display_name: "HyperFrames"
+  short_description: "Create HyperFrames video compositions"
+  default_prompt: "Use $hyperframes to build an HTML-based video composition with animation, captions, audio, or transitions."

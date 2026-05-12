@@ -1,0 +1,4 @@
+interface:
+  display_name: "KB Retriever"
+  short_description: "Search and answer from local knowledge bases"
+  default_prompt: "Use $kb-retriever to retrieve information from a local knowledge base directory and answer with file-aware context."

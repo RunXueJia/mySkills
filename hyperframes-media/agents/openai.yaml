@@ -1,0 +1,4 @@
+interface:
+  display_name: "HyperFrames Media"
+  short_description: "Prepare TTS, captions, and media"
+  default_prompt: "Use $hyperframes-media to generate voiceover, transcribe audio, or remove backgrounds for HyperFrames assets."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lottie HyperFrames"
+  short_description: "Deterministic Lottie in HyperFrames"
+  default_prompt: "Use $lottie to embed and seek Lottie or dotLottie animations inside HyperFrames."

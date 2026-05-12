@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPT Image 2"
+  short_description: "Prompt and workflow guide for images"
+  default_prompt: "Use $gpt-image-2 to plan a GPT Image 2 generation or editing workflow."
