@@ -162,3 +162,9 @@
 - 分类优先按主要用途归入；如果一个 skill 跨多个用途，以最常触发的用途为主。
 - 不建议把 skill 文件夹移动到分类子目录，避免影响 Codex 的 skill 发现机制。
 - 若 skill 行为发生变化，应同步更新对应“用途”和“注意”说明。
+
+## parallel-code-review-agent
+
+- Category: code review workflow
+- Trigger/use case: Use when you want one orchestrator agent to run multiple parallel code review agents and merge findings for a repository diff, PR, branch, commit range, or changed files.
+- Maintenance notes: Update `parallel-code-review-agent/SKILL.md` when reviewer roles, severity rules, or output format should change.
