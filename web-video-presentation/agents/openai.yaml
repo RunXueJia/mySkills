@@ -1,4 +1,0 @@
-interface:
-  display_name: "Web Video Presentation"
-  short_description: "Turn scripts into click-driven web videos"
-  default_prompt: "Use $web-video-presentation to turn an article or script into a click-driven 16:9 web video presentation."

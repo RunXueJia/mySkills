@@ -1,4 +1,4 @@
 interface:
   display_name: "HyperFrames"
-  short_description: "Create HyperFrames video compositions"
-  default_prompt: "Use $hyperframes to build an HTML-based video composition with animation, captions, audio, or transitions."
+  short_description: "Unified HyperFrames video workflow"
+  default_prompt: "Use $hyperframes to build, validate, render, or translate a HyperFrames project."

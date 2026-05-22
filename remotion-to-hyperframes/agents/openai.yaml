@@ -1,4 +1,0 @@
-interface:
-  display_name: "Remotion to HyperFrames"
-  short_description: "Port Remotion videos to HyperFrames"
-  default_prompt: "Use $remotion-to-hyperframes to translate an existing Remotion composition into HyperFrames HTML."

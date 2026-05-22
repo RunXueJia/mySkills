@@ -1,4 +1,0 @@
-interface:
-  display_name: "HyperFrames Workflow"
-  short_description: "End-to-end HyperFrames production"
-  default_prompt: "Use $hyperframes-workflow to create, preview, validate, render, or troubleshoot a HyperFrames video project."

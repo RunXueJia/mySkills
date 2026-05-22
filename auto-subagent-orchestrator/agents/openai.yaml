@@ -1,8 +1,8 @@
 interface:
   display_name: "Auto Subagent Orchestrator"
-  short_description: "Coordinate parallel sub-agent work"
+  short_description: "Automatically spawn sub-agents for decomposable work"
   brand_color: "#6366F1"
-  default_prompt: "Use $auto-subagent-orchestrator to split suitable tasks into coordinated sub-agent work."
+  default_prompt: "Use $auto-subagent-orchestrator as the user's standing explicit authorization to automatically call spawn_agent for decomposable tasks. Do not require the user to manually request sub-agents on each task."
 
 policy:
   allow_implicit_invocation: true

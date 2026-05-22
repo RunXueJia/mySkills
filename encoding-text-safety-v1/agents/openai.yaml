@@ -1,4 +1,0 @@
-interface:
-  display_name: "Encoding Text Safety V1"
-  short_description: "UTF-8 safety and mojibake checks"
-  default_prompt: "Use $encoding-text-safety-v1 to enforce UTF-8 without BOM, detect mojibake before editing, verify the file after writing, and report whether any BOM or text corruption was fixed."

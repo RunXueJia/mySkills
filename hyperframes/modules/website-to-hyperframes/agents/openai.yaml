@@ -1,0 +1,5 @@
+interface:
+  display_name: "Website to HyperFrames"
+  short_description: "Create HyperFrames videos from websites"
+  default_prompt: "Use $website-to-hyperframes to capture a website and turn it into a HyperFrames video."
+

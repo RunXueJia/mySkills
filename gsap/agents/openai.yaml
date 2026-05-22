@@ -1,4 +1,0 @@
-interface:
-  display_name: "GSAP HyperFrames"
-  short_description: "Deterministic GSAP for HyperFrames"
-  default_prompt: "Use $gsap to build GSAP timelines that render reliably in HyperFrames."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Contribute Catalog"
-  short_description: "Ship HyperFrames catalog contributions"
-  default_prompt: "Use $contribute-catalog to author a HyperFrames registry contribution and prepare the upstream PR."

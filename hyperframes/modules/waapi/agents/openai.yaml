@@ -1,0 +1,5 @@
+interface:
+  display_name: "WAAPI HyperFrames"
+  short_description: "Seek-safe Web Animations API patterns"
+  default_prompt: "Use $waapi to author Web Animations API motion that seeks reliably in HyperFrames."
+

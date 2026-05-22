@@ -1,4 +1,0 @@
-interface:
-  display_name: "CSS Animations HyperFrames"
-  short_description: "Seek-safe CSS animation patterns"
-  default_prompt: "Use $css-animations to write CSS animations that seek deterministically in HyperFrames."

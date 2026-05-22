@@ -1,4 +1,0 @@
-interface:
-  display_name: "Three.js HyperFrames"
-  short_description: "Deterministic Three.js scenes"
-  default_prompt: "Use $three to build deterministic Three.js or WebGL scenes inside HyperFrames."

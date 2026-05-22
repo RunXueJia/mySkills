@@ -1,0 +1,5 @@
+interface:
+  display_name: "HyperFrames Registry"
+  short_description: "Install HyperFrames registry items"
+  default_prompt: "Use $hyperframes-registry to add and wire registry blocks or components into a HyperFrames project."
+

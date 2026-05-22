@@ -11,7 +11,7 @@
 | 技术栈规范类 | FastAPI + Vue 全栈开发规范 | `fastapi-vue-standard` |
 | 网页与产品设计类 | 高质量网页、落地页、仪表盘、前端体验设计 | `web-design-engineer` |
 | 知识库检索类 | 本地资料、Markdown、PDF、Excel 检索问答 | `kb-retriever` |
-| 视觉创作类 | 图像生成、网页视频、HyperFrames 制作、动画适配、registry 组件 | `gpt-image-2`, `hyperframes`, `hyperframes-cli`, `hyperframes-media`, `hyperframes-workflow`, `website-to-hyperframes`, `web-video-presentation`, `remotion-to-hyperframes`, `animejs`, `css-animations`, `gsap`, `lottie`, `tailwind`, `three`, `waapi`, `hyperframes-registry`, `contribute-catalog` |
+| 视觉创作类 | 图像生成、网页视频、HyperFrames 制作、动画适配、registry 组件 | `gpt-image-2`, `hyperframes` |
 | 任务总结类 | 将当前任务整理为桌面中文 Markdown 概要 | `summarize-task` |
 
 ## Skills 明细
@@ -19,9 +19,9 @@
 ### 流程与安全类
 
 - `auto-subagent-orchestrator`
-  - 用途：任务开始时判断是否适合拆分，并在规则允许时按需启动子节点。
+  - 用途：任务开始时判断是否适合拆分；一旦适合拆分，即视为已有用户长期授权，自动启动最小必要子节点。
   - 主进程职责：分配任务、跟踪集成、审查结果、处理兜底。
-  - 注意：高优先级系统/开发者/用户指令始终优先。
+  - 注意：无需用户每次手动指定子节点；但高优先级系统/开发者/用户指令始终优先。
 
 - `encoding-text-safety-v1`
   - 用途：创建或修改代码、配置、文档、提示词、注释、用户可见文本时，保证 UTF-8 文本安全。
@@ -70,84 +70,12 @@
   - 覆盖：海报、UI、产品图、信息图、学术图、架构图、漫画、头像、分镜、IP 周边等模板。
   - 注意：可在本地出图、交给宿主图像工具出图，或退化为高质量 prompt 顾问。
 
-#### HyperFrames 视频制作
+#### HyperFrames Unified Skill
 
 - `hyperframes`
-  - 用途：创建 HTML 视频组合、标题卡、字幕、转场、音频响应视觉和场景动画。
-  - 覆盖：composition 编写、时间轴、媒体接入、字幕、转场、完整视频制作流程。
-  - 注意：CLI 命令交给 `hyperframes-cli`；TTS、转写、抠背景交给 `hyperframes-media`。
-
-- `hyperframes-cli`
-  - 用途：运行 HyperFrames CLI 开发闭环。
-  - 覆盖：`init`、`lint`、`inspect`、`preview`、`render`、`doctor`、环境排查。
-  - 注意：资产预处理命令不归它处理，改用 `hyperframes-media`。
-
-- `hyperframes-media`
-  - 用途：为 HyperFrames 项目生成或处理媒体资产。
-  - 覆盖：Kokoro TTS、Whisper 转写、u2net 背景移除。
-  - 注意：首次运行相关命令可能下载模型。
-
-- `hyperframes-workflow`
-  - 用途：沉淀 HyperFrames 视频项目的固定创作、预览、检查、渲染和 Docker 排障流程。
-  - 覆盖：新项目初始化、Codex 生成视频提示、preview/lint/inspect/render 顺序、Windows 下 Docker 渲染镜像手动构建。
-  - 注意：不替代 `hyperframes` 和 `hyperframes-cli`；写 composition 和运行 CLI 时仍配合对应 skill 使用。
-
-- `website-to-hyperframes`
-  - 用途：把现有网站捕获并改造成 HyperFrames 视频。
-  - 覆盖：基于 URL 的产品展示、站点宣传片、产品导览、社交广告视频。
-  - 注意：用户提供 URL 并要求做视频时优先触发。
-
-- `web-video-presentation`
-  - 用途：把文章、口播稿、课程或产品讲解做成点击驱动的 16:9 网页视频演示。
-  - 覆盖：口播稿、outline、逐章开发、可选口播音频合成、录屏友好的交互节奏。
-  - 注意：适合“网页做视频/动态 PPT 但不像 PPT/录屏教程”类任务。
-
-- `remotion-to-hyperframes`
-  - 用途：把已有 Remotion 组合迁移为 HyperFrames HTML 组合。
-  - 覆盖：Remotion 源码结构判断、可迁移模式识别、不可迁移模式提示。
-  - 注意：只有用户明确要求 port/convert/migrate Remotion 时使用。
-
-#### HyperFrames 动画适配
-
-- `animejs`
-  - 用途：在 HyperFrames 中使用 Anime.js 动画和 timeline。
-  - 注意：动画需要注册并支持确定性 seek。
-
-- `css-animations`
-  - 用途：在 HyperFrames 中使用 CSS keyframes、animation-delay、fill-mode 等 CSS 动画。
-  - 注意：CSS-only motion 也要能被预览和渲染确定性定位。
-
-- `gsap`
-  - 用途：在 HyperFrames 中使用 GSAP 动画、timeline、easing、stagger 和性能模式。
-  - 注意：优先使用可 seek、可复现的时间轴写法。
-
-- `lottie`
-  - 用途：在 HyperFrames 中嵌入 lottie-web JSON 或 `.lottie` 动画。
-  - 注意：需要注册实例并保证 After Effects 导出动画可确定性 seek。
-
-- `tailwind`
-  - 用途：在 HyperFrames 组合里使用 Tailwind CSS v4.2 浏览器运行时。
-  - 注意：适用于 `hyperframes init --tailwind` 项目及 v4 CSS-first token 调试。
-
-- `three`
-  - 用途：在 HyperFrames 中创建 Three.js/WebGL 场景、相机运动、shader 视觉。
-  - 注意：WebGL canvas 需要响应 `hf-seek` 并在渲染中保持确定性。
-
-- `waapi`
-  - 用途：在 HyperFrames 中使用 Web Animations API。
-  - 注意：`element.animate()`、`currentTime`、`KeyframeEffect` 等要支持确定性 seek。
-
-#### HyperFrames Registry
-
-- `hyperframes-registry`
-  - 用途：安装并接线 HyperFrames registry 中的 blocks 和 components。
-  - 覆盖：`hyperframes add`、安装位置、`index.html` 接线、`hyperframes.json` 维护。
-  - 注意：只负责使用现有 registry 资源。
-
-- `contribute-catalog`
-  - 用途：向 HyperFrames 公共 catalog 新增 registry block 或 component，并准备上游 PR。
-  - 覆盖：caption style、VFX block、transition、lower third、text effect、overlay、snippet。
-  - 注意：只有用户明确要贡献公开 catalog 时使用。
+  - 用途：HyperFrames 唯一入口 skill，覆盖 HTML 视频组合、标题卡、字幕、转场、音频响应视觉、CLI、媒体预处理、registry、网站捕获、Remotion 迁移、web-video-presentation，以及动画适配器。
+  - 覆盖：composition 编写、时间轴、媒体接入、字幕、转场、完整视频制作流程、`init`/`lint`/`inspect`/`preview`/`render`/`doctor`、TTS/转写/抠背景、registry 接线、网站转视频、Remotion 转换、口播稿演示、GSAP/Anime.js/CSS/WAAPI/Lottie/Three/Tailwind。
+  - 注意：内部模块索引在 `hyperframes/modules/README.md`，按任务选择最小模块即可。
 
 ### 任务总结类
 
