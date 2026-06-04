@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | 流程与安全类 | 任务编排、编码安全、文本安全检查 | `auto-subagent-orchestrator`, `encoding-text-safety-v1` |
 | Skill 管理类 | 查找、评估、安装可用 skill | `find-skills`, `personal-skill-installer` |
-| 技术栈规范类 | FastAPI + Vue 全栈开发规范 | `fastapi-vue-standard` |
+| 技术栈规范类 | FastAPI + Vue 全栈开发规范、新项目协作规范初始化 | `fastapi-vue-standard`, `new-fullstack-project` |
 | 网页与产品设计类 | 高质量网页、落地页、仪表盘、前端体验设计 | `web-design-engineer` |
 | 知识库检索类 | 本地资料、Markdown、PDF、Excel 检索问答 | `kb-retriever` |
 | 视觉创作类 | 图像生成、网页视频、HyperFrames 制作、动画适配、registry 组件 | `gpt-image-2`, `hyperframes` |
@@ -46,6 +46,11 @@
   - 用途：提供 FastAPI + Vue 全栈项目的通用编码规范。
   - 覆盖：数据建模、业务实现、API 设计、前端开发、权限控制、质量门禁。
   - 注意：代码修改后默认只检查变更文件语法；不要主动运行构建命令、开发服务、全量测试或联调验证，除非用户明确要求。
+
+- `new-fullstack-project`
+  - 用途：当用户发送“新建全栈项目”或要求初始化全栈项目协作规范时，在当前会话工作区创建 `AGENTS.md`。
+  - 覆盖：从 skill 内置规范模板复制生成通用全栈项目协作说明，包含前后端分层、API、数据库、配置、后台任务、验证和迭代记录规范。
+  - 注意：默认不覆盖已有 `AGENTS.md`；只有用户明确要求替换或覆盖时才使用 `--force`。
 
 ### 网页与产品设计类
 
