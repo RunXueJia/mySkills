@@ -1,4 +1,4 @@
 interface:
   display_name: "新建全栈项目"
-  short_description: "在当前工作区创建通用全栈项目 AGENTS.md 规范"
+  short_description: "在当前工作区创建全栈目录骨架和 AGENTS.md 规范"
   default_prompt: "新建全栈项目"

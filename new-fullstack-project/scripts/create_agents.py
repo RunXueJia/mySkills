@@ -7,12 +7,12 @@ import sys
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Create AGENTS.md in a workspace from the bundled full-stack project standard."
+        description="Create a full-stack project skeleton and AGENTS.md from the bundled standard."
     )
     parser.add_argument(
         "--workspace",
         default=".",
-        help="Workspace directory where AGENTS.md should be created. Defaults to the current directory.",
+        help="Workspace directory to initialize. Defaults to the current directory.",
     )
     parser.add_argument(
         "--force",
@@ -25,6 +25,34 @@ def main() -> int:
     template_path = skill_dir / "references" / "fullstack-project-agents-template.md"
     workspace = Path(args.workspace).resolve()
     target_path = workspace / "AGENTS.md"
+    skeleton_dirs = [
+        "backend",
+        "backend/app",
+        "backend/app/api",
+        "backend/app/api/v1",
+        "backend/app/api/v1/endpoints",
+        "backend/app/services",
+        "backend/app/repositories",
+        "backend/app/models",
+        "backend/app/schemas",
+        "backend/app/tasks",
+        "backend/app/libs",
+        "backend/sql",
+        "backend/docs",
+        "backend/docs/iterations",
+        "frontend",
+        "frontend/src",
+        "frontend/src/api",
+        "frontend/src/components",
+        "frontend/src/components/common",
+        "frontend/src/views",
+        "frontend/src/stores",
+        "frontend/src/router",
+        "docs",
+        "docs/iterations",
+        "docs/deployment",
+        "docs/api",
+    ]
 
     if not template_path.is_file():
         print(f"ERROR template not found: {template_path}", file=sys.stderr)
@@ -34,14 +62,32 @@ def main() -> int:
         print(f"ERROR workspace directory not found: {workspace}", file=sys.stderr)
         return 1
 
-    if target_path.exists() and not args.force:
-        print(f"EXISTS {target_path}")
-        print("Use --force only when the user explicitly asks to overwrite it.")
-        return 2
+    created_dirs: list[Path] = []
+    existing_dirs: list[Path] = []
+    for relative_dir in skeleton_dirs:
+        directory = workspace / relative_dir
+        if directory.exists():
+            if not directory.is_dir():
+                print(f"ERROR path exists but is not a directory: {directory}", file=sys.stderr)
+                return 1
+            existing_dirs.append(directory)
+            continue
+        directory.mkdir(parents=True, exist_ok=True)
+        created_dirs.append(directory)
 
-    content = template_path.read_text(encoding="utf-8")
-    target_path.write_text(content, encoding="utf-8", newline="\n")
-    print(f"CREATED {target_path}")
+    agents_exists = target_path.exists()
+    if agents_exists and not args.force:
+        print(f"SKIPPED_AGENTS existing {target_path}")
+        print("Use --force only when the user explicitly asks to overwrite it.")
+    else:
+        content = template_path.read_text(encoding="utf-8")
+        target_path.write_text(content, encoding="utf-8", newline="\n")
+        action = "UPDATED_AGENTS" if agents_exists else "CREATED_AGENTS"
+        print(f"{action} {target_path}")
+
+    for directory in created_dirs:
+        print(f"CREATED_DIR {directory}")
+    print(f"SUMMARY created_dirs={len(created_dirs)} existing_dirs={len(existing_dirs)}")
     return 0
 
 
