@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | 流程与安全类 | 任务编排、任务清单、编码安全、文本安全检查 | `auto-subagent-orchestrator`, `workspace-task-checklist`, `encoding-text-safety-v1` |
 | Skill 管理类 | 查找、评估、安装可用 skill | `find-skills`, `personal-skill-installer` |
+| 浏览器自动化类 | 真实浏览器操作、页面调试、截图和表单流验证 | `playwright` |
 | 技术栈规范类 | FastAPI + Vue 全栈开发规范、新项目协作规范初始化 | `fastapi-vue-standard`, `new-fullstack-project` |
 | 网页与产品设计类 | 高质量网页、落地页、仪表盘、前端体验设计 | `web-design-engineer` |
 | 知识库检索类 | 本地资料、Markdown、PDF、Excel 检索问答 | `kb-retriever` |
@@ -44,6 +45,13 @@
   - 用途：覆盖个人 Codex skills 的默认安装位置。
   - 覆盖：安装、列出、更新用户级 skills 时，默认目标目录为 `%USERPROFILE%\.agents\skills`。
   - 注意：每次安装或更新个人 skill 后，同步维护 `%USERPROFILE%\.agents\skills\README.md`。
+
+### 浏览器自动化类
+
+- `playwright`
+  - 用途：通过 `playwright-cli` 或随 skill 提供的 wrapper 脚本，从终端驱动真实浏览器进行页面访问、快照、点击、表单填写、截图和 UI 流程调试。
+  - 覆盖：CLI 命令参考、常见工作流、故障排查，以及脚本路径 `~/.agents/skills/playwright/scripts/playwright_cli.sh`。
+  - 注意：使用元素引用前先获取页面 snapshot；目标副本已从 `.codex` 迁移到 `%USERPROFILE%\.agents\skills\playwright`，保留原 `.codex` 源目录不删除。
 
 ### 技术栈规范类
 
