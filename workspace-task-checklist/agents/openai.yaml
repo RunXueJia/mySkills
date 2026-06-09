@@ -1,4 +1,4 @@
 interface:
   display_name: "Workspace Task Checklist"
-  short_description: "Create and update docs/task task checklists"
-  default_prompt: "Use $workspace-task-checklist when a task needs a tracked workspace checklist."
+  short_description: "Track Chinese docs/task checklists and changed files"
+  default_prompt: "Use $workspace-task-checklist when a task needs a tracked Chinese workspace checklist with modified-file records."
